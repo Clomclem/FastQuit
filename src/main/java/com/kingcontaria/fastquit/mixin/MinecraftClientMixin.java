@@ -43,7 +43,7 @@ public abstract class MinecraftClientMixin {
     }
 
     @Inject(method = "printCrashReport(Lnet/minecraft/client/MinecraftClient;Ljava/io/File;Lnet/minecraft/util/crash/CrashReport;)V", at = @At("HEAD"))
-    private static void fastquit$waitForSaveOnCrash(MinecraftClient client, File file, CrashReport cr, CallbackInfo ci) {
+    private static void fastquit$waitForSaveOnCrash(CallbackInfo ci) {
         FastQuit.exit();
     }
 }

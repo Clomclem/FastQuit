@@ -39,6 +39,13 @@ public abstract class LevelStorageSessionMixin {
     @Shadow public abstract WorldSaveHandler createSaveHandler();
 
     @Synchronized
+    @Shadow public abstract @Nullable LevelSummary getLevelSummary(Dynamic<?> dynamic);
+
+    @Synchronized
+    @Shadow
+    protected abstract @Nullable Dynamic<?> readLevelProperties(boolean old);
+
+    @Synchronized
     @Shadow public abstract void backupLevelDataFile(DynamicRegistryManager registryManager, SaveProperties saveProperties, @Nullable NbtCompound nbt);
 
     @Synchronized
